@@ -1,3 +1,4 @@
+<?php include 'config.php'; ?>
 <html>
   <head>
     <title>Mya Nikitas Portfolio</title>
@@ -12,13 +13,13 @@
   </head>
 <body class="w3-light-grey">
 
-<!-- Page Container -->
+
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-  <!-- The Grid -->
+
   <div class="w3-row-padding">
   
-    <!-- Left Column -->
+
     <div class="w3-third">
     
       <div class="w3-white w3-text-grey w3-card-4">
@@ -43,33 +44,31 @@
         </div>
       </div><br>
 
-    <!-- End Left Column -->
+  
     </div>
 
-    <!-- Right Column -->
+  
     <div class="w3-twothird">
     
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-pink"></i>Work Experience</h2>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>AP Computer Science Instructor / Zinkerz.com</b></h5>
-          <h6 class="w3-text-pink"><i class="fa fa-calendar fa-fw w3-margin-right"></i>November 2022 - <span class="w3-tag w3-pink w3-round">Current</span></h6>
-          <p> ● Instruct and teach students concepts of AP Computer Science Principles. </p>
-            <p> ● Prepare students for the AP exam. </p>
-          <hr>
-        </div>
-        <div class="w3-container">
-            <h5 class="w3-opacity"><b>Scratch Coding Instructor / Zinkerz.com</b></h5>
-            <h6 class="w3-text-pink"><i class="fa fa-calendar fa-fw w3-margin-right"></i>April 2023 - <span class="w3-tag w3-pink w3-round">Current</span></h6>
-            <p> ● Teach students coding basics using Scratch</p>
-            <hr>
-          </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Computer Science Intern</b></h5>
-          <h6 class="w3-text-pink"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Septermber 2020 - June 2021</h6>
-          <p> ● Help teach students computer science </p>
-            <p>● Assisted teaching</p>
-          <hr>
+        <?php
+          $sql = "SELECT * FROM work_experience";
+          $result = $conn->query($sql);
+
+          if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              echo "<h5 class='w3-opacity'><b>" . $row["job_title"] . " at " . $row["company_name"] . "</b></h5>";
+              echo "<h6 class='w3-text-pink'><i class='fa fa-calendar fa-fw w3-margin-right'></i>" . $row["start_date"] . " - ";
+              echo ($row["end_date"] ? $row["end_date"] : "Current") . "</h6>";
+              echo "<p>" . $row["description"] . "</p>";
+              echo "<hr>";
+            }
+          } else {
+            echo "0 results";
+          }
+          ?>
         </div>
 
       </div>
@@ -89,16 +88,13 @@
         </div>
       </div>
 
-    <!-- End Right Column -->
     </div>
     
-  <!-- End Grid -->
   </div>
   
-  <!-- End Page Container -->
+
 </div>
 
-<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
 <footer class="w3-container w3-pink w3-center w3-margin-top">
   <p>Find me on social media.</p>
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
