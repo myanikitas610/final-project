@@ -1,4 +1,4 @@
-<?php include 'config.php'; ?>
+
 <html>
   <head>
     <title>Mya Nikitas Portfolio</title>
