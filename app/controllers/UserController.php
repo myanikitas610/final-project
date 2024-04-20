@@ -4,7 +4,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\User;
 
-class UserController extends Controller
+class UserController 
 {
     public function validateUser($inputData) {
         $errors = [];
@@ -56,12 +56,17 @@ class UserController extends Controller
             'message' => $message,
         ];
     }
-    public function getUsers()
+    public function getUsers($id)
     {
         $userModel = new User();
         header("Content-Type: application/json");
-        $users = $userModel->getAllUsers();
-            
+        if($id){
+            $user = $userModel->getUserById($id);
+
+        }
+        else{
+                    $users = $userModel->getAllUsers();
+            }
         echo json_encode($users);
         exit();
     }
@@ -89,4 +94,8 @@ class UserController extends Controller
         ]);
         exit();
     }
+    public function contact()
+        {   
+            include '../public/assets/views/main/contact.php'; 
+        }
 }

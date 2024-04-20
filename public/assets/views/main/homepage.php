@@ -45,7 +45,7 @@
       </div><br>
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-        <button class="w3-button w3-pink w3-round-large w3-xxlarge">Contact me!</button>
+        <a href="http://localhost:8888/contact" class="w3-button w3-pink w3-round-large w3-xxlarge">Contact me!</a>
       </div>
       </div>
   
