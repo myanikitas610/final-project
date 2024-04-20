@@ -24,7 +24,7 @@
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="https://lh3.googleusercontent.com/pw/AJFCJaWSTwFuZYGInnHQ6E5FYZJU125G-URkHmKUwsqIqxQas5sT5Dk3_LttEHywE-W82775dp2ECnG_X5WPYKsCjdh9oUZfEOVro9v8WfeO7X7QBC9cE4nHnPcpRXZW3_9x4G9vVKmpQcDk0hTBWN71ztXLZnEUXyNG0E3t-8eCH9x30Ds-BMnAXbxrYQIPkkTEdGiZKKvBH0Mv7zYI1JzsKRRZ1_CSxXe9Sk534l7zYGWYbBTCLbx3R8Xk11eT536dVLgyv-VZ46HO_kmY12F3r-xhfGw7JKVRQDqTKBm1exkoq6F12mM-XMOD1eBqf7WRFsBRIkUqxEJ-tBTX9zxVpSojCyb1KUJo0HTRbGVknSYwwltUbl6mXr355K8tjXyf7vKi_29l1EiFXmsy0Z1R8-XNVI4W6wqnr6FDVtYjy-Y0X_uHwk5T9fo6UxhIaz6nKeoIKDcjSlbuhOLM77kRpKKcVnNNe05H_XOZ7Ly33kHQJudNgN6LaCcBM5v51iGya84o3SZQgh0tV6jphsubBP3W41wecfVOY9ahfRKf2jpxZf_NabJMj4LekRz3zHCM0_bC3nul1xNjg-fmd1iklTOguw6wtLaAy3BvyFswHSGtzKpI5Io4IhZRAQ9lxYuO0_aMqOCQuCVOdL5-87_bigAosSUwwoc1aPmDlpGAGHqhwjsAkok-Uz0d-0qBDmGRun_u3es6lO3tmJP6XdLGjpel4WTJ83rE7GqMpZhheTZK4okv_ozZxi5_UTMu6yiAemYzTGUY0ZrsoOyCjn4Ch9Nvn4UvjXOeDtEr5wmmhPNZg3FpObeXH03nIbQ-wG5am0TPUZMHjbqA6eWaaHOMFMaacpsYyoO0EW2kZPB0Kdw870AjXBH22WavL-ynHPJqPdIF-aLHTRD5Eox8PP5_ue5aC9bu1WmMfIsI7GTqK5yxgaqBC0q_jBfmhsRQIP8Xuad_jandbTMAZtCz27piRupMlcdyxUo=w687-h1171-s-no?authuser=1" style="width:100%" alt="Avatar">
+          <img src="picture.JPEG" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
             <h2>Mya Nikitas</h2>
           </div>

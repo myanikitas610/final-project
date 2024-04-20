@@ -1,15 +1,21 @@
 <?php
 
 use app\controllers\UserController;
+use app\controllers\MainController;
+use app\controllers\WorkExperienceController;
 
 $routes = [
-    'users' => [
-        'controller' => UserController::class,
-        'GET' => 'getUsers',
-        'POST' => 'saveUsers'
+    'homepage' => [
+        'controller' => MainController::class,
+        'GET' => 'homepage'
     ],
-    'view-users' => [
+    'contact' => [
         'controller' => UserController::class,
-        'GET' => 'getUsers',
+        'GET' => 'contact',
+        'POST' => 'saveUser'
+    ],
+    'get_expierence' => [
+        'controller' => WorkExperienceController::class,
+        'GET' => 'getProjects'
     ]
 ];
