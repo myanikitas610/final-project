@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\core\DatabaseModel;
+use app\core\Database;
 
 class WorkExperience 
 {

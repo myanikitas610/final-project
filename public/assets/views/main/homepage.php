@@ -24,10 +24,10 @@
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="picture.JPEG" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Mya Nikitas</h2>
-          </div>
+          <img src="https://media.licdn.com/dms/image/C4E03AQHKV2xYKtOiAw/profile-displayphoto-shrink_400_400/0/1652816577693?e=1718841600&v=beta&t=SN2ju82uvZ2RVJhRA4ggydYxvkB4JaEby605nCbiWPw" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-white" style="text-shadow: 2px 2px 4px black;">
+          <h2><strong>Mya Nikitas</strong></h2>
+        </div>
         </div>
         <div class="w3-container">
           <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-pink"></i>Student</p>
@@ -43,7 +43,11 @@
           <h4>Teaching</h4>
         </div>
       </div><br>
-
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+        <button class="w3-button w3-pink w3-round-large w3-xxlarge">Contact me!</button>
+      </div>
+      </div>
   
     </div>
 
@@ -53,24 +57,47 @@
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-pink"></i>Work Experience</h2>
         <div class="w3-container">
-        <?php
-          $sql = "SELECT * FROM work_experience";
-          $result = $conn->query($sql);
-
-          if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-              echo "<h5 class='w3-opacity'><b>" . $row["job_title"] . " at " . $row["company_name"] . "</b></h5>";
-              echo "<h6 class='w3-text-pink'><i class='fa fa-calendar fa-fw w3-margin-right'></i>" . $row["start_date"] . " - ";
-              echo ($row["end_date"] ? $row["end_date"] : "Current") . "</h6>";
-              echo "<p>" . $row["description"] . "</p>";
-              echo "<hr>";
-            }
-          } else {
-            echo "0 results";
-          }
-          ?>
         </div>
+        <div id="work-experience-section" class="w3-container">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function() {
+    $.ajax({
+        url: 'http://localhost:8888/get_experience',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            renderWorkExperience(data);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error fetching work experience:', error);
+        }
+    });
 
+    function renderWorkExperience(data) {
+        var workExperienceSection = $('#work-experience-section');
+        workExperienceSection.empty(); 
+        if (data.length > 0) {
+            var html = '<ul>';
+            data.forEach(function(item) {
+                html += '<li><h4>' + item.job_title + ' / ' + item.company_name + '</h4>';
+                html += '<p><strong>Start Date:</strong> ' + item.start_date + '</p>';
+                if (item.end_date) {
+                    html += '<p><strong>End Date:</strong> ' + item.end_date + '</p>';
+                }
+                html += '<p><strong>Description:</strong> ' + item.description + '</p></li>';
+            });
+            html += '</ul>';
+            workExperienceSection.html(html);
+        } else {
+            workExperienceSection.html('<p>No work experience available.</p>');
+        }
+    }
+});
+
+
+  </script>
+  </div>
       </div>
 
       <div class="w3-container w3-card w3-white">
@@ -96,13 +123,7 @@
 </div>
 
 <footer class="w3-container w3-pink w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  
  </footer>
 
 </body>

@@ -14,8 +14,8 @@ $routes = [
         'GET' => 'contact',
         'POST' => 'saveUser'
     ],
-    'get_expierence' => [
+    'get_experience' => [
         'controller' => WorkExperienceController::class,
-        'GET' => 'getProjects'
+        'GET' => 'getExperience'
     ]
 ];
